@@ -17,7 +17,7 @@ import ContactForm from './ContactForm'
 import Footer from './component/Footer'
 import Mywork from './component/Mywork'
 
-import Colorgenerator from '/colorgenerator.jpg'
+import sltLogo from '/slt-logo.png'
 import contactmanager from '/contact-manager.jpg'
 import pizzajoint from '/pizzajoin.jpg'
 import textutils from '/textutils.png'
@@ -25,7 +25,7 @@ import inotebook from '/todo.jpg'
 
 import { FaGreaterThan } from "react-icons/fa";
 import { FaLessThan } from "react-icons/fa6";
-import {Toaster} from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
 import "./App.css"
 const App = () => {
   const skill = [react, next, js, html, css]
@@ -79,15 +79,39 @@ const App = () => {
     setheading({ title: title })
   }
   const myWork = [
-    { image: Colorgenerator, content: "Color Generator Website  is Website that is use for creating rgb color like this rgb(red,green,blue)", url: "https://color-generator-six-bice.vercel.app" },
-    { image: textutils, content: "Textutils Website is Website for converting text to LowerCase,UpperCase, Capitalize,Copy and etc", url: "https://textutile.vercel.app" },
-    { image: inotebook, content: "InoteBook Website is Website for saving the note on the cloud with user specific  and also perform crud operation on these note", url: "https://inotebook-mern-frontend.vercel.app" },
-    { image: contactmanager, content: "Contact-Manager Website is Website for saving the contact on the cloud with user specific and alses perform crud operation on these user contact ", url: "https://contact-manager-nine-ruddy.vercel.app" },
-    { image: pizzajoint, content: "PizzaJoint Website is Website for get order from the user and also display his order  on the screen ", url: "https://pizza-joint-ivory.vercel.app" },
+
+    {
+      image: sltLogo,
+      content: "Color Generator Website  is Website that is use for creating rgb color like this rgb(red,green,blue)",
+      url: "https://sky-travel-website.vercel.app/"
+    },
+
+    {
+      image: textutils,
+      content: "Textutils Website is Website for converting text to LowerCase,UpperCase, Capitalize,Copy and etc", url: "https://textutile.vercel.app"
+    },
+
+    {
+      image: inotebook,
+      content: "InoteBook Website is Website for saving the note on the cloud with user specific  and also perform crud operation on these note",
+      url: "https://inotebook-mern-frontend.vercel.app"
+    },
+
+    {
+      image: contactmanager,
+      content: "Contact-Manager Website is Website for saving the contact on the cloud with user specific and alses perform crud operation on these user contact ",
+      url: "https://contact-manager-nine-ruddy.vercel.app"
+    },
+
+    {
+      image: pizzajoint,
+      content: "PizzaJoint Website is Website for get order from the user and also display his order  on the screen ",
+      url: "https://pizza-joint-ivory.vercel.app"
+    },
   ]
   return (
     <div>
-      <Toaster reverseOrder={false} position='top-center'/>
+      <Toaster reverseOrder={false} position='top-center' />
       <Navbar />
       <div className=' container '>
         <Hero />
@@ -118,7 +142,7 @@ const App = () => {
           </div>
 
         </div>
-        <div className={`     w-[95%] md:w-1/3 h-auto`} style={{ visibility: heading.title ? "visible" : "hidden" }}>
+        <div className={`w-[95%] md:w-1/3 h-auto`} style={{ visibility: heading.title ? "visible" : "hidden" }}>
           {currentSkill && <div
             className={`${`   border-2 border-[#6751b9] rounded-md  `}`} >
 
@@ -136,18 +160,18 @@ const App = () => {
           }
         </div>
       </div>
-      
+
       <h1 className=' font-bold md:text-[20px] md:pl-20 pl-14  tracking-wide text-[17px]'>My Work</h1>
       <div className=' flex w-[90%]   md:flex-row flex-col  my-7 p-5  items-center  relative rounded-xl  border-2 border-[#6751b9]    mx-5 md:mx-10 '>
-      
-        {myWork.map((item, index) =>(<Mywork item={item} key={index} />))}
+
+        {myWork.map((item, index) => (<Mywork item={item} key={index} />))}
         <span className=' absolute left-[-25px] cursor-pointer  bg-black p-2 rounded-lg border-2 border-[#6751b9]  md:flex hidden'><FaLessThan size={20} color='#6751b9' /></span>
         <span className=' absolute cursor-pointer right-[-25px]  bg-black p-2 rounded-lg border-2 border-[#6751b9] md:flex hidden'><FaGreaterThan size={20} color='#6751b9' /></span>
       </div>
 
-      
+
       <ContactForm />
-      
+
       <Footer />
     </div>
   )
